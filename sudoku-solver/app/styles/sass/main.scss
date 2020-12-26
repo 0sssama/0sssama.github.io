@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Ubuntu Condensed'; }
+html { font-size: 100%; }
+@mixin tinyScreens {
+    @media (max-width: 17.4375em) { @content; } // 279px
+}
+@mixin mobile {
+    @media (max-width: 37.4375em) { @content; } // 599px
+}
+@mixin tablet {
+    @media (min-width: 37.5em) { @content; }    // 600px
+}
+@mixin desktop {
+    @media (min-width: 64.01em) { @content; }   // 1024px
+}
+@mixin hugeScreens {
+    @media (min-width: 120.0625em) { @content; }// 1921px
+}
+
+a {
+    color: #2675bf;
+    &:hover {
+        color: #4e9ce6;
+    }
+}
+
+body {
+    background: #eee;
+    color: #111;
+    text-align:center;
+}
+header {
+    margin-top: 0.8rem;
+    h1 {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: -3px;
+    }
+    h3 {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    hr {
+        border: none;
+        border-bottom: 1px solid #111;
+    }
+}
+main {
+    margin: 1.5vh 0;
+
+    .board {
+        margin: 2vh auto 1vh;
+        width: fit-content;
+        .line {
+            display: flex;
+            align-items: center;
+            input {
+                margin: 2px;
+                font-size: 3rem;
+                text-align:center;
+                width: 1.3ch;
+                height: 2.1ch;
+                &:nth-child(3), &:nth-child(6) {
+                    margin-right: 0.6rem;
+                }
+            }
+            &:nth-child(3), &:nth-child(6) {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}

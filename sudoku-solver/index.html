@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet'>
+	<link rel='stylesheet' href='app/styles/main.css'>
+	<title>sudoku solver!</title>
+</head>
+<body>
+	
+	<header>
+		<h1>Sudoku Solver!</h1>
+		<h3>Made by <a href="https://github.com/0sssama">0sssama</a></h3>
+		<hr />
+	</header>
+
+	<main>
+
+		<p>You can type your own custom board, or <a href="#" onClick="insert('random')">generate a random one</a>!<br />
+			(empty items are represented as "0" or "-" or "")</p>
+
+		<div class="board">
+			
+		</div>
+		<p class="under-board"><a href="#" onClick="reset()">RESET</a> - <a href="#" onClick="solve()">SOLVE!</a></p>
+	</main>
+
+
+	<footer>
+		<h4>Wanna buy me a coffee ? - <a href="#">Donate</a> - :) <3</h4>
+	</footer>
+</body>
+	<script src='app/js/script.js'></script>
+</html>
