@@ -84,17 +84,9 @@ window.onload = () => {
     changeContent('whoami')
 }
 const changeContent = (to) => {
-    if (to === 'whoami') {
-        $('.content').fadeOut()
-        setTimeout(()=>{
-            $('.content').html(whoamiContent)
-        }, 400)
-        $('.content').fadeIn()
-    } else if (to === 'contact') {
-        $('.content').fadeOut()
-        setTimeout(()=>{
-            $('.content').html(contactContent)
-        }, 400)
-        $('.content').fadeIn()
-    }
+    $('.content').fadeOut()
+    setTimeout(()=>{
+        $('.content').html(to==='contact'?contactContent:whoamiContent)
+    }, 400)
+    $('.content').fadeIn()
 }
