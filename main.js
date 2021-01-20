@@ -22,10 +22,16 @@ window.onload = () => {
     switchLanguage(defaultLang)
 }
 const changeContent = (to, lang) => {
+    let currentLang
+    if (lang==='crnt') {
+        currentLang = getCookie('lang')
+    } else {
+        currentLang = lang
+    }
     currentPage = to
     $('.content').fadeOut()
-    let contactContent = lang==='en'?contactContentEN:contactContentFR
-    let whoamiContent = lang==='en'?whoamiContentEN:whoamiContentFR
+    let contactContent = currentLang==='en'?contactContentEN:contactContentFR
+    let whoamiContent = currentLang==='en'?whoamiContentEN:whoamiContentFR
     setTimeout(()=>{
         $('.content').html(to==='contact'?contactContent:whoamiContent)
     }, 400)

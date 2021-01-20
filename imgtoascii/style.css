@@ -5,19 +5,10 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #131313;
-  color:#fff;
+  background-color: #222;
+  color:#fefefe;
   font-family: 'PT Sans';
+  margin-top: 3rem;
   text-align:center;
-}
-input {
-  border:none;
-  outline:none;
-  font-family: 'PT Sans';
-}
-.submit {
-  background:#fff;
-  color:#131313;
-  padding:5px 10px;
-  margin-top:20px;
+  font-weight: 500;
 }
