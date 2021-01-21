@@ -1,3 +1,7 @@
+const inLink = "https://www.linkedin.com/in/olabrahmi"
+const twitterLink = "https://twitter.com/0samaTweets"
+const githubLink = "https://github.com/0sssama"
+const email = "LabrahmiOussama@gmail.com"
 const whoamiContentEN = `
     <div class="whoami">
         <div class="title">
@@ -10,7 +14,7 @@ const whoamiContentEN = `
             <p class="en">
                 ${en.text3}
             </p>
-            <button class="ol-button__regular" onClick="changeContent('contact')">
+            <button class="ol-button__regular" onClick="changeContent('contact', 'en')">
                 ${en.text4}
             </button>
         </div>
@@ -28,7 +32,7 @@ const whoamiContentFR = `
             <p class="fr">
                 ${fr.text3}
             </p>
-            <button class="ol-button__regular" onClick="changeContent('contact')">
+            <button class="ol-button__regular" onClick="changeContent('contact', 'fr')">
                 ${fr.text4}
             </button>
         </div>
@@ -43,15 +47,15 @@ const contactContentEN = `
             <div class="sm email">
                 <ion-icon name="mail"></ion-icon>
                 <p>
-                    <a href="mailto:labrahmioussama@gmail.com">
-                        LabrahmiOussama@gmail.com
+                    <a href="mailto:${email}">
+                        ${email}
                     </a>
                 </p>
             </div>
             <div class="sm linkedin">
                 <ion-icon name="logo-linkedin"></ion-icon>
                 <p>
-                    <a href="https://www.linkedin.com/in/oussama-labrahmi-0929821ab/">
+                    <a href="${inLink}">
                         Oussama Labrahmi
                     </a>
                 </p>
@@ -59,7 +63,7 @@ const contactContentEN = `
             <div class="sm github">
                 <ion-icon name="logo-github"></ion-icon>
                 <p>
-                    <a href="https://www.github.com/0sssama">
+                    <a href="${githubLink}">
                         0sssama
                     </a>
                 </p>
@@ -67,7 +71,7 @@ const contactContentEN = `
             <div class="sm twitter">
                 <ion-icon name="logo-twitter"></ion-icon>
                 <p>
-                    <a href="https://www.twitter.com/0samaTweets">
+                    <a href="${twitterLink}">
                         @0samaTweets
                     </a>
                 </p>
@@ -84,15 +88,15 @@ const contactContentFR = `
             <div class="sm email">
                 <ion-icon name="mail"></ion-icon>
                 <p>
-                    <a href="mailto:labrahmioussama@gmail.com">
-                        LabrahmiOussama@gmail.com
+                    <a href="mailto:${email}">
+                        ${email}
                     </a>
                 </p>
             </div>
             <div class="sm linkedin">
                 <ion-icon name="logo-linkedin"></ion-icon>
                 <p>
-                    <a href="https://www.linkedin.com/in/oussama-labrahmi-0929821ab/">
+                    <a href="${inLink}">
                         Oussama Labrahmi
                     </a>
                 </p>
@@ -100,7 +104,7 @@ const contactContentFR = `
             <div class="sm github">
                 <ion-icon name="logo-github"></ion-icon>
                 <p>
-                    <a href="https://www.github.com/0sssama">
+                    <a href="${githubLink}">
                         0sssama
                     </a>
                 </p>
@@ -108,7 +112,7 @@ const contactContentFR = `
             <div class="sm twitter">
                 <ion-icon name="logo-twitter"></ion-icon>
                 <p>
-                    <a href="https://www.twitter.com/0samaTweets">
+                    <a href="${twitterLink}">
                         @0samaTweets
                     </a>
                 </p>
