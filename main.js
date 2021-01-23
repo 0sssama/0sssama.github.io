@@ -1,10 +1,5 @@
 let currentPage = 'whoami'
 
-const getCookie = (name) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
 window.onload = () => {
     let storedLang = getCookie('lang')
     let defaultLang
@@ -30,11 +25,35 @@ const changeContent = (to, lang) => {
     }
     currentPage = to
     $('.content').fadeOut()
-    let contactContent = currentLang==='en'?contactContentEN:contactContentFR
     let whoamiContent = currentLang==='en'?whoamiContentEN:whoamiContentFR
+    let projectsContent = currentLang==='en'?projectsContentEN:projectsContentFR
+    let skillsContent = currentLang==='en'?skillsContentEN:skillsContentFR
+    let contactContent = currentLang==='en'?contactContentEN:contactContentFR
+    let content
+    switch (to) {
+        case 'whoami':
+            content = whoamiContent
+            break
+        case 'projects':
+            content = projectsContent
+            break
+        case 'skills':
+            content = skillsContent
+            break
+        case 'contact':
+            content = contactContent
+            break
+        default:
+            content = ` <h1 style="text-align:center">
+                            Whoops, something might have gone wrong!
+                        </h1>`
+    }
     setTimeout(()=>{
-        $('.content').html(to==='contact'?contactContent:whoamiContent)
+        $('.content').html(content)
     }, 400)
+    if (content === 'projects') {
+        showProject(0)
+    }
     $('.content').fadeIn()
 }
 
@@ -55,4 +74,6 @@ const switchLanguage = (to) => {
     changeContent(currentPage, to)
     $('.bb-l1').text(to==='fr'?fr.bb_l1:en.bb_l1)
     $('.bb-l2').text(to==='fr'?fr.bb_l2:en.bb_l2)
+    $('.bb-l3').text(to==='fr'?fr.bb_l3:en.bb_l3)
+    $('.bb-l4').text(to==='fr'?fr.bb_l4:en.bb_l4)
 }

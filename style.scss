@@ -63,6 +63,7 @@ body {
         --mainLighter: #ff9191;
         --mainVeryLIGHT: #fff7f7;
         --dark: rgba(10, 10, 10);
+        --darkLighter: rgba(100, 100, 100);
         --light: rgba(250, 250, 250);
         --hover: rgb(238, 238, 238);
         --gray: rgb(236, 236, 236);
@@ -72,6 +73,7 @@ body {
         --mainLighter: #500c0c;
         --mainVeryLIGHT: #1d0000;
         --dark: rgba(250, 250, 250);
+        --darkLighter: rgba(235, 235, 235);
         --light: rgba(10, 10, 10);
         --hover: rgb(20, 20, 20);
         --gray: rgb(26, 26, 26);
@@ -81,31 +83,41 @@ body {
 }
 .ol {
     &-button {
-        &__regular {
+        &__regular, &__secondary {
             border: none;
             outline: none;
             cursor: pointer;
-            border-radius: 0;
             padding: 0.65rem 1.7rem;
-            background-image: linear-gradient(30deg, var(--main), var(--mainLighter));
-            transition: background-position 400ms ease,
+            letter-spacing: 0.5px;
+            transition: background-position 400ms ease, 
                         box-shadow 500ms ease-in-out;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             background-position: 0px 0px;
             background-size: 150%;
             border-radius: 4px;
+            color: var(--light);
             @include mobile {
                 font-size: 0.9rem;
                 padding: 0.65rem 1rem;
             }
-            color: var(--light);
+        }
+        &__regular {
+            background-image: linear-gradient(30deg, var(--main), var(--mainLighter));
             box-shadow: 10px 20px 45px var(--mainLowOp);
             &:hover {
                 box-shadow: 5px 5px 35px var(--mainLowOp);
                 background-position: 100% 0px;
             }
+        }
+        &__secondary {
+            background-image: linear-gradient(30deg, var(--dark), var(--darkLighter));
+            box-shadow: 10px 20px 45px var(--shadowEffect);
+            &:hover {
+                box-shadow: 5px 5px 35px var(--shadowEffect);
+                background-position: 100% 0px;
+            }
+
         }
     }
 }
@@ -220,8 +232,9 @@ body {
     bottom: 0;
     height: var(--bottomBarHeight);
     box-shadow: -5px 0px 45px rgba(0, 0, 0, 0.05);
-    .left, .right {
-        width: 50%; height: 100%;
+    .link {
+        flex: 1; height: 100%;
+        border: 1px solid var(--gray);
         a {
             display: flex;
             align-items: center;
@@ -234,7 +247,7 @@ body {
             font-weight: 600;
             text-transform: uppercase;
             @include mobile {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
             }
             &:hover {
                 background-color: var(--hover);
@@ -248,26 +261,37 @@ body {
                 ion-icon {
                     margin-bottom: 5px;
                     @include mobile {
-                        margin-bottom: 2px;
+                        margin-bottom: 4px;
                     }
                 }
                 width: 100%;
                 height: 100%;
             }
         }
-
-    }
-    .left {
-        ion-icon {
+        &.whoami ion-icon {
             font-size: 1.3rem;
+            @include mobile {
+                font-size: 1rem;
+            }
         }
-        border: 1px solid var(--gray);
-    }
-    .right {
-        ion-icon {
+        &.contact ion-icon {
             font-size: 1.1rem;
+            @include mobile {
+                font-size: 0.9rem;
+            }
         }
-        border: 1px solid var(--gray);
+        &.projectsLink ion-icon {
+            font-size: 1.3rem;
+            @include mobile {
+                font-size: 1rem;
+            }
+        }
+        &.skills ion-icon {
+            font-size: 1.3rem;
+            @include mobile {
+                font-size: 1rem;
+            }
+        }
     }
 }
 .options {
@@ -305,6 +329,195 @@ body {
         ion-icon {
             font-size: 1.5rem;
             color: var(--dark);
+        }
+    }
+}
+
+
+
+
+
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    .project {
+        width: 95%;
+        @include tablet {
+            width: 75%;
+        }
+        @include desktop {
+            width: 50%;
+        }
+        --imageWidth: 350px;
+        --imageHeight: 200px;
+        @include mobile {
+            --imageWidth: 300px;
+            --imageHeight: 180px;
+        }
+        @media screen and (max-width: 320px) {
+            --imageWidth: 250px;
+            --imageHeight: 148px;
+        }
+        &__image {
+            margin: 0 auto 1rem;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--imageWidth);
+            height: var(--imageHeight);
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 5px 10px 45px rgba(0, 0, 0, 0.2);
+            img {
+                width: 100%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top:0;left:0;right:0;bottom:0;
+                z-index: 5;
+                background-color: rgba(255, 255, 255, 0.75);
+                color: var(--dark);
+                font-weight: 600;
+                opacity: 0;
+                transition: opacity 400ms ease;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                ion-icon {
+                    font-size: 1.6rem;
+                    margin-right: 0.2rem;
+                }
+            }
+            &:hover .project__image__link {
+                opacity: 1;
+            }
+        }
+        &__title {
+            font-weight: 800;
+            letter-spacing: 1px;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            @include mobile {
+                font-size: 2rem;
+            }
+        }
+        &__description {
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+        &__footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 1.5rem;
+            @media screen and (max-height: 650px) {
+                margin-top: 0.5rem;
+            }
+        }
+        .visit-btn {
+            display: flex;
+            align-items: center;
+            ion-icon {
+                margin-right: 0.3rem;
+                font-size: 1.3rem;
+            }
+        }
+        &__used-langs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include mobile {
+                flex-direction: column;
+            }
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            p {
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            &__icons {
+                display: flex;
+                align-items: center;
+                margin-left: 0.4rem;
+                @include mobile {
+                    margin-left: 0;
+                    margin-top: 0.3rem;
+                }
+                ion-icon {
+                    font-size: 1.5rem;
+                    display: none;
+                    &.visible {
+                        display: block;
+                    }
+                    &.html {color: #E44D26;}
+                    &.css {color: #254BDD;}
+                    &.js {color: #EFD81D;}
+                    &.react {color: #5ED3F3;}
+                    &.nodejs {color: #509941;}
+                    &.sass {color: #C76395;}
+                    &:not(:last-child) {
+                        margin-right: 0.3rem;
+                    }
+                }
+            }
+        }
+        &__buttons {
+            position: fixed;
+            right: 0; left: 0;
+            bottom: var(--bottomBarHeight);
+            padding: 4vh 2vw;
+            @media screen and (max-height: 650px) {
+                padding: 2vh 2vw;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            --BR: 20px;
+            --secBR: 3px;
+            &__next {
+                border-radius: var(--secBR) var(--BR) var(--BR) var(--secBR);
+                padding-left: 1.4rem;
+                padding-right: 0.8rem;
+                ion-icon {
+                    margin-left: 0.8rem;
+                }
+            }
+            &__previous {
+                border-radius: var(--BR) var(--secBR) var(--secBR) var(--BR);
+                padding-left: 0.8rem;
+                padding-right: 1.4rem;
+                ion-icon {
+                    margin-right: 0.8rem;
+                }
+            }
+            &__next, &__previous {
+                display: flex;
+                align-items: center;
+                ion-icon {
+                    font-size: 1.1rem;
+                }
+                @include mobile {
+                    padding: 0.8rem;
+                    border-radius: 50%;
+                    p {
+                        display: none;
+                    }
+                    ion-icon {
+                        margin:0;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
         }
     }
 }

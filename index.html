@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./jquery.js"></script>
     <script src="./lang.js"></script>
+    <script src="./projects.js"></script>
     <script src="./contents.js"></script>
     <title>Oussama Labrahmi's portfolio</title>
 </head>
@@ -43,7 +44,7 @@
     </div>
     <div class="content"></div>
     <div class="bottom-bar">
-        <div class="left">
+        <div class="whoami link">
             <a href="#" onClick="changeContent('whoami', 'crnt')">
                 <div class="link-wrapper">
                     <ion-icon name="help-circle"></ion-icon>
@@ -51,11 +52,27 @@
                 </div>
             </a>
         </div>
-        <div class="right">
+        <div class="projectsLink link">
+            <a href="#" onClick="changeContent('projects', 'crnt')">
+                <div class="link-wrapper">
+                    <ion-icon name="code"></ion-icon>
+                    <p class="bb-l2">PROJECTS</p>
+                </div>
+            </a>
+        </div>
+        <div class="skills link">
+            <a href="#" onClick="changeContent('skills', 'crnt')">
+                <div class="link-wrapper">
+                    <ion-icon name="construct"></ion-icon>
+                    <p class="bb-l3">MY SKILLS</p>
+                </div>
+            </a>
+        </div>
+        <div class="contact link">
             <a href="#" onClick="changeContent('contact', 'crnt')">
                 <div class="link-wrapper">
                     <ion-icon name="send"></ion-icon>
-                    <p class="bb-l2">CONTACT ME</p>
+                    <p class="bb-l4">CONTACT ME</p>
                 </div>
             </a>
         </div>
