@@ -30,7 +30,7 @@ const projects = [
         description_en: 'An algorithm to solve any sudoku board in the world. \
                     It\'s a back-tracking Javascript algorithm.',
         description_fr: "Un algorithme pour résourdre n'importe quel tableau \
-                        de sudoku au monde. L'algorithme Javascript est d'un type \
+                        de sudoku au monde. Cet algorithme Javascript est d'un type \
                         back-tracking.",
         langs: ['html', 'css' ,'js']
     },
