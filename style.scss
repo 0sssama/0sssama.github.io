@@ -227,7 +227,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: absolute;
+    position: fixed;
     left: 0; right: 0;
     bottom: 0;
     height: var(--bottomBarHeight);
@@ -477,6 +477,9 @@ body {
             bottom: var(--bottomBarHeight);
             padding: 4vh 2vw;
             @media screen and (max-height: 650px) {
+                padding: 2vh 2vw;
+            }
+            @include mobile {
                 padding: 2vh 2vw;
             }
             display: flex;
