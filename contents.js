@@ -52,7 +52,8 @@ const projectsContentEN = `
                             <ion-icon name="attach"></ion-icon>
                             <p>${en.projects_visit}</p>
                         </div>
-                        <img class="project__actual-image" src="${projects[0].image}" alt="${projects[0].link}" />
+                        <div class="loading show"></div>
+                        <img onload="hideLoading()" class="project__actual-image" src="${projects[0].image}" alt="${projects[0].link}" />
                     </div>
                     <h1 class="project__title">
                         ${projects[0].title}
@@ -97,7 +98,8 @@ const projectsContentFR = `
                             <ion-icon name="attach"></ion-icon>
                             <p>${fr.projects_visit}</p>
                         </div>
-                        <img class="project__actual-image" src="${projects[0].image}" alt="${projects[0].link}" />
+                        <div class="loading show"></div>
+                        <img onload="hideLoading()" class="project__actual-image" src="${projects[0].image}" alt="${projects[0].link}" />
                     </div>
                     <h1 class="project__title">
                         ${projects[0].title}
@@ -134,12 +136,16 @@ const projectsContentFR = `
                 </div>
             </div>
 `
+const hideLoading = () => {
+    $('.loading').removeClass('show')
+}
 const showProject = (id, lang) => {
     $('.project').fadeOut()
     setTimeout(()=>{
         $('.project__title').text(projects[id].title)
         let description = lang==='fr'?projects[id].description_fr:projects[id].description_en
         $('.project__description').text(description)
+        $('.loading').addClass('show')
         $('.project__actual-image').attr('src', projects[id].image)
         $('.project__actual-image').attr('alt', projects[id].link)
         $('.project__image__link').attr('onClick', `window.open('${projects[id].link}')`)

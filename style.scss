@@ -521,3 +521,20 @@ body {
         }
     }
 }
+
+.loading {
+    position: absolute;
+    top:0;left:0;right:0;bottom:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('./loading.gif');
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 200ms ease;
+    &.show {
+        z-index:6;
+        opacity: 1;
+    }
+}
