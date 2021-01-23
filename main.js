@@ -16,7 +16,7 @@ window.onload = () => {
     }
     switchLanguage(defaultLang)
 }
-const changeContent = (to, lang) => {
+const changeContent = (to, lang, projectID) => {
     let currentLang
     if (lang==='crnt') {
         currentLang = getCookie('lang')
@@ -51,8 +51,8 @@ const changeContent = (to, lang) => {
     setTimeout(()=>{
         $('.content').html(content)
     }, 400)
-    if (content === 'projects') {
-        showProject(0)
+    if (to === 'projects') {
+        showProject(projectID?projectID:0, getCookie('lang'))
     }
     $('.content').fadeIn()
 }
@@ -71,7 +71,12 @@ const switchTheme = () => {
 
 const switchLanguage = (to) => {
     document.cookie = `lang=${to}`
-    changeContent(currentPage, to)
+    if (currentPage === 'projects') {
+        let currentProjectID = parseInt($('.project__buttons__next').attr('onClick').substring(12, 13))-1
+        changeContent(currentPage, to, currentProjectID)
+    } else {
+        changeContent(currentPage, to)
+    }
     $('.bb-l1').text(to==='fr'?fr.bb_l1:en.bb_l1)
     $('.bb-l2').text(to==='fr'?fr.bb_l2:en.bb_l2)
     $('.bb-l3').text(to==='fr'?fr.bb_l3:en.bb_l3)
