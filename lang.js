@@ -23,6 +23,6 @@ const fr = {
     "projects_used": "Outils utilisés",
     "bb_l1": "Qui suis je?",
     "bb_l2": "Projets",
-    "bb_l3": "Compétances",
+    "bb_l3": "Compétences",
     "bb_l4": "Contactez moi"
 }

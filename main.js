@@ -82,3 +82,39 @@ const switchLanguage = (to) => {
     $('.bb-l3').text(to==='fr'?fr.bb_l3:en.bb_l3)
     $('.bb-l4').text(to==='fr'?fr.bb_l4:en.bb_l4)
 }
+
+
+const skillsLol = [
+    {
+        name: 'langs',
+        content: skills_langs
+    },
+    {
+        name: 'frontend',
+        content: skills_frontend
+    },
+    {
+        name: 'backend',
+        content: skills_backend
+    },
+    {
+        name: 'tools',
+        content: skills_tools
+    }
+]
+const changeSkills = (to) => {
+    let newSkills = '<p>Whoops, an error occurred!</p>'
+    skillsLol.map(skill => {
+        if (skill.name === to) {
+            newSkills = skill.content
+            $(`li.${skill.name}-link`).addClass('active')
+        } else {
+            $(`li.${skill.name}-link`).removeClass('active')
+        }
+    })
+    $('.skills__wrapper').fadeOut()
+    setTimeout(()=>{
+        $('.skills__wrapper').html(newSkills)
+    }, 400)
+    $('.skills__wrapper').fadeIn()
+}

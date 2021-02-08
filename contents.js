@@ -2,7 +2,7 @@ const inLink = "https://www.linkedin.com/in/olabrahmi"
 const twitterLink = "https://twitter.com/0samaTweets"
 const githubLink = "https://github.com/0sssama"
 const email = "LabrahmiOussama@gmail.com"
-const discord = "osm#6969"
+const discord = "osm#1567"
 const getCookie = (name) => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -173,8 +173,232 @@ const showProject = (id, lang) => {
     }, 400)
     $('.project').fadeIn()
 }
-const skillsContentEN = `skills will be added soon :(`
-const skillsContentFR = `comptétences seront ajoutés le plus tôt possible :(`
+const skills_langs = `
+    <div class="skill">
+        <p class="skill__name">Javascript</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Python</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">C</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">PHP</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+`
+const skills_frontend = `
+    <div class="skill">
+        <p class="skill__name">React.JS</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Sass</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Vue.JS</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+`
+const skills_backend = `
+    <div class="skill">
+        <p class="skill__name">Express.JS</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">MongoDB</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">FLASK</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">SQL Alchemy</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+`
+const skills_tools = `
+    <div class="skill">
+        <p class="skill__name">GIT</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Docker</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Ps/Ai</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Figma</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Ae/Pr</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+    <div class="skill">
+        <p class="skill__name">Nmap</p>
+        <div class="skill__rating">
+            <span></span>   
+            <span></span>   
+            <span></span>   
+            <span class="empty"></span>   
+            <span class="empty"></span>   
+        </div>
+    </div>
+`
+const skillsContentEN = `
+        <div class="skills">
+            <p class="title">My Skills</p>
+            <div class="skills__content">
+                <div class="skills__nav">
+                    <ul>
+                        <li onClick="changeSkills('langs')" class="langs-link active">
+                            Langs
+                        </li>
+                        <li onClick="changeSkills('frontend')" class="frontend-link">
+                            Frontend
+                        </li>
+                        <li onClick="changeSkills('backend')" class="backend-link">
+                            Backend
+                        </li>
+                        <li onClick="changeSkills('tools')" class="tools-link">
+                            Tools
+                        </li>
+                    </ul>
+                </div>
+                <div class="skills__wrapper">${skills_langs}</div>
+            </div>
+        </div>
+`
+const skillsContentFR = `
+    <div class="skills">
+        <p class="title">Compétences</p>
+        <div class="skills__content">
+            <div class="skills__nav">
+                <ul>
+                    <li onClick="changeSkills('langs')" class="langs-link active">
+                        Langs
+                    </li>
+                    <li onClick="changeSkills('frontend')" class="frontend-link">
+                        Frontend
+                    </li>
+                    <li onClick="changeSkills('backend')" class="backend-link">
+                        Backend
+                    </li>
+                    <li onClick="changeSkills('tools')" class="tools-link">
+                        Outils
+                    </li>
+                </ul>
+            </div>
+            <div class="skills__wrapper">${skills_langs}</div>
+        </div>
+    </div>
+`
 const contactContentEN = `
     <div class="contact">
         <div class="title">
