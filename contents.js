@@ -3,6 +3,7 @@ const twitterLink = "https://twitter.com/0samaTweets"
 const githubLink = "https://github.com/0sssama"
 const email = "LabrahmiOussama@gmail.com"
 const discord = "osm#1567"
+var currentSkill = 'langs'
 const getCookie = (name) => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -173,184 +174,178 @@ const showProject = (id, lang) => {
     }, 400)
     $('.project').fadeIn()
 }
+const skills_list = {
+    langs: [
+        {
+            name: 'Javascript',
+            rating: 5,
+        },
+        {
+            name: 'Python',
+            rating: 4,
+        },
+        {
+            name: 'PHP',
+            rating: 3,
+        },
+        {
+            name: 'C',
+            rating: 2,
+        }
+    ],
+    frontend: [
+        {
+            name: 'React.js',
+            rating: 5,
+        },
+        {
+            name: 'Sass',
+            rating: 5,
+        },
+        {
+            name: 'Vue.js',
+            rating: 2,
+        }
+    ],
+    backend: [
+        {
+            name: 'Express.js',
+            rating: 5,
+        },
+        {
+            name: 'MongoDB',
+            rating: 5,
+        },
+        {
+            name: 'Flask',
+            rating: 3,
+        },
+        {
+            name: 'SQL Alchemy',
+            rating: 2,
+        }
+    ],
+    tools: [
+        {
+            name: 'GIT/Github',
+            rating: 5,
+        },
+        {
+            name: 'Docker',
+            rating: 5,
+        },
+        {
+            name: 'PS/AI',
+            rating: 5,
+        },
+        {
+            name: 'Figma',
+            rating: 4,
+        },
+        {
+            name: 'AE/PR',
+            rating: 4,
+        },
+        {
+            name: 'Nmap',
+            rating: 5,
+        },
+    ],
+}
 const skills_langs = `
-    <div class="skill">
-        <p class="skill__name">Javascript</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Python</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">C</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">PHP</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
+    ${skills_list.langs.map(skill => {
+        return (`
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating>0?'':'empty'}></span>   
+                    <span class=${skill.rating>1?'':'empty'}></span>   
+                    <span class=${skill.rating>2?'':'empty'}></span>   
+                    <span class=${skill.rating>3?'':'empty'}></span>   
+                    <span class=${skill.rating>4?'':'empty'}></span>   
+                </div>
+            </div>
+        `
+        )
+    }).join("\n")}
 `
 const skills_frontend = `
-    <div class="skill">
-        <p class="skill__name">React.JS</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Sass</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Vue.JS</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
+    ${skills_list.frontend.map(skill => {
+        return (`
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating>0?'':'empty'}></span>   
+                    <span class=${skill.rating>1?'':'empty'}></span>   
+                    <span class=${skill.rating>2?'':'empty'}></span>   
+                    <span class=${skill.rating>3?'':'empty'}></span>   
+                    <span class=${skill.rating>4?'':'empty'}></span>   
+                </div>
+            </div>
+        `
+        )
+    }).join("\n")}
 `
 const skills_backend = `
-    <div class="skill">
-        <p class="skill__name">Express.JS</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">MongoDB</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">FLASK</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">SQL Alchemy</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
+    ${skills_list.backend.map(skill => {
+        return (`
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating>0?'':'empty'}></span>   
+                    <span class=${skill.rating>1?'':'empty'}></span>   
+                    <span class=${skill.rating>2?'':'empty'}></span>   
+                    <span class=${skill.rating>3?'':'empty'}></span>   
+                    <span class=${skill.rating>4?'':'empty'}></span>   
+                </div>
+            </div>
+        `
+        )
+    }).join("\n")}
 `
 const skills_tools = `
-    <div class="skill">
-        <p class="skill__name">GIT</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Docker</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Ps/Ai</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Figma</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Ae/Pr</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
-    <div class="skill">
-        <p class="skill__name">Nmap</p>
-        <div class="skill__rating">
-            <span></span>   
-            <span></span>   
-            <span></span>   
-            <span class="empty"></span>   
-            <span class="empty"></span>   
-        </div>
-    </div>
+    ${skills_list.tools.map(skill => {
+        return (`
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating>0?'':'empty'}></span>   
+                    <span class=${skill.rating>1?'':'empty'}></span>   
+                    <span class=${skill.rating>2?'':'empty'}></span>   
+                    <span class=${skill.rating>3?'':'empty'}></span>   
+                    <span class=${skill.rating>4?'':'empty'}></span>   
+                </div>
+            </div>
+        `
+        )
+    }).join("\n")}
 `
+const skillsLol = [
+    {
+        name: 'langs',
+        content: skills_langs
+    },
+    {
+        name: 'frontend',
+        content: skills_frontend
+    },
+    {
+        name: 'backend',
+        content: skills_backend
+    },
+    {
+        name: 'tools',
+        content: skills_tools
+    }
+]
+const skillContent = (skillName) => {
+    skillsLol.map(skill => {
+        if (skill.name === skillName) {
+            return (skill.content)
+        }
+    })
+    return ''
+}
 const skillsContentEN = `
         <div class="skills">
             <p class="title">My Skills</p>
@@ -371,7 +366,7 @@ const skillsContentEN = `
                         </li>
                     </ul>
                 </div>
-                <div class="skills__wrapper">${skills_langs}</div>
+                <div class="skills__wrapper">${skillContent(currentSkill)}</div>
             </div>
         </div>
 `
@@ -395,7 +390,7 @@ const skillsContentFR = `
                     </li>
                 </ul>
             </div>
-            <div class="skills__wrapper">${skills_langs}</div>
+            <div class="skills__wrapper">${skillContent(currentSkill)}</div>
         </div>
     </div>
 `

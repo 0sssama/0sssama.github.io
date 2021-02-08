@@ -2,7 +2,17 @@ let currentPage = 'whoami'
 
 window.onload = () => {
     let storedLang = getCookie('lang')
+    let storedTheme = getCookie('theme')
     let defaultLang
+    if (storedTheme) {
+        if (!['light', 'dark'].includes(storedTheme)) {
+            document.cookie = 'theme=light'
+        } else {
+            if (storedTheme === 'dark') {
+                switchTheme()
+            }
+        }
+    }
     if (storedLang) {
         if (!['en', 'fr'].includes(storedLang)) {
             document.cookie = "lang=en"
@@ -50,6 +60,9 @@ const changeContent = (to, lang, projectID) => {
     }
     setTimeout(()=>{
         $('.content').html(content)
+        if (to === 'skills') {
+            changeSkills(currentSkill)
+        }
     }, 400)
     if (to === 'projects') {
         showProject(projectID?projectID:0, getCookie('lang'))
@@ -66,6 +79,7 @@ const switchTheme = () => {
     $('.theme-icon').attr('name', currentTheme==='light'?'sunny':'moon')
     $('body').toggleClass('light')
     $('body').toggleClass('dark')
+    document.cookie = `theme=${currentTheme==='light'?'dark':'light'}`
 }
 
 
@@ -83,26 +97,8 @@ const switchLanguage = (to) => {
     $('.bb-l4').text(to==='fr'?fr.bb_l4:en.bb_l4)
 }
 
-
-const skillsLol = [
-    {
-        name: 'langs',
-        content: skills_langs
-    },
-    {
-        name: 'frontend',
-        content: skills_frontend
-    },
-    {
-        name: 'backend',
-        content: skills_backend
-    },
-    {
-        name: 'tools',
-        content: skills_tools
-    }
-]
 const changeSkills = (to) => {
+    currentSkill = to
     let newSkills = '<p>Whoops, an error occurred!</p>'
     skillsLol.map(skill => {
         if (skill.name === to) {

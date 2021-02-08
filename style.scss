@@ -43,8 +43,8 @@ flipped-screen {
     font-family: 'Barlow';
     box-sizing: border-box;
     scroll-behavior: smooth;
-    transition: color 400ms ease,
-                background-color 400ms ease;
+    transition: color 250ms ease,
+                background-color 250ms ease;
 }
 body {
     width: 100%;
@@ -567,7 +567,7 @@ body {
             flex-direction: column;
         }
         &__nav {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             ul {
                 list-style: none;
                 display: flex;
@@ -596,15 +596,23 @@ body {
         }
         &__wrapper {
             --skillWidth: 250px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, var(--skillWidth));
-            grid-template-rows: auto;
-            grid-gap: 1rem;
+            --skillHeight: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 11rem;
+            width: var(--skillWidth);
+            overflow: hidden;
             .skill {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 overflow: hidden;
+                height: var(--skillHeight);
+                width: var(--skillWidth);
+                &:not(:last-child) {
+                    margin-bottom: 1.2rem;
+                }
                 &__name {
                     font-weight: 800;
                     font-style: italic;
