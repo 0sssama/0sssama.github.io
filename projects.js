@@ -5,12 +5,8 @@ const projects = [
         title: 'MATCHING PROFILE PICTURES',
         link: 'https://matchingpfps.com',
         image: `${host}/imgs/matchingpfps.png`,
-        description_en: 'Easy matching profile pictures finder. Made from scratch \
-                    with one-by-one picked high-quality pictures for our lovely \
-                    visitors averaging 500 on the daily.',
-        description_fr: 'Un moyen de recherches de matching photos de profil. Réalisé \
-                        en HTML5 & CSS3 & JS, avec une centeine d\'images d\'haute qualité \
-                        pour nos visiteurs charmant qui moyennent 500 par jour.',
+        description_en: 'Matching profile pictures finder. 500 average daily visitors.',
+        description_fr: 'Outil de recherche de photos de profils \'matching.\' Moyenne 500 visiteurs chaque jour.',
         langs: ['html', 'sass', 'js']
     },
     {
@@ -27,11 +23,9 @@ const projects = [
         title: 'BACK-TRACKING SUDOKU SOLVING ALGORITHM',
         link: 'https://labrahmi.me/sudoku-solver',
         image: `${host}/imgs/sudoku.png`,
-        description_en: 'An algorithm to solve any sudoku board in the world. \
-                    It\'s a back-tracking Javascript algorithm.',
-        description_fr: "Un algorithme pour résourdre n'importe quel tableau \
-                        de sudoku au monde. Cet algorithme Javascript est d'un type \
-                        back-tracking.",
+        description_en: 'A Javascript back-tracking algorithm to solve any sudoku board in the world.',
+        description_fr: "Un algorithme Javascript du type back-tracking qui peut résourdre n'importe quel tableau \
+                        de sudoku au monde.",
         langs: ['html', 'css' ,'js']
     },
     {
@@ -40,9 +34,9 @@ const projects = [
         link: 'https://palaisshazam.com',
         image: `${host}/imgs/shazam.png`,
         description_en: 'Website for a beautiful Moroccan Palace in the heart \
-                    of the Medina of Fes, the mysterious Palais Shazam!',
+                    of the Medina of Fes : Palais Shazam.',
         description_fr: "Site Internet pour un extrèmement beau Palais Marocain \
-                        au coeur de la Medina du Fes, le mysterieux Palais Shazam!",
+                        au coeur de la Medina du Fes : Palais Shazam.",
         langs: ['html', 'sass', 'js']
     }
 ]
