@@ -401,13 +401,15 @@ const contactContentEN = `
         </div>
         <div class="contact-details">
             <div class="sm email">
-                <p>
+                <ion-icon name="mail"></ion-icon>
+                <p> 
                     <a href="mailto:${email}">
                         ${email}
                     </a>
                 </p>
             </div>
             <div class="sm linkedin">
+                <ion-icon name="logo-linkedin"></ion-icon>
                 <p>
                     <a href="${inLink}">
                         Oussama Labrahmi
@@ -415,6 +417,7 @@ const contactContentEN = `
                 </p>
             </div>
             <div class="sm github">
+                <ion-icon name="logo-github"></ion-icon>
                 <p>
                     <a href="${githubLink}">
                         0sssama
@@ -422,6 +425,7 @@ const contactContentEN = `
                 </p>
             </div>
             <div class="sm twitter">
+                <ion-icon name="logo-twitter"></ion-icon>
                 <p>
                     <a href="${twitterLink}">
                         @0samaTweets
@@ -429,6 +433,7 @@ const contactContentEN = `
                 </p>
             </div>
             <div class="sm discord">
+                <ion-icon name="logo-discord"></ion-icon>
                 <p>
                     ${discord}
                 </p>
