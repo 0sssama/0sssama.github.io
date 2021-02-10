@@ -87,6 +87,7 @@ const switchLanguage = (to) => {
     document.cookie = `lang=${to}`
     if (currentPage === 'projects') {
         let currentProjectID = parseInt($('.project__buttons__next').attr('onClick').substring(12, 13))-1
+        console.log(currentProjectID)
         changeContent(currentPage, to, currentProjectID)
     } else {
         changeContent(currentPage, to)

@@ -138,6 +138,7 @@ body {
     }
     .title {
         margin-bottom: 2rem;
+        text-shadow: 5px 15px 60px var(--shadowEffect);
         h1 {
             font-weight: 800;
             font-size: 4rem;
@@ -232,6 +233,7 @@ body {
     bottom: 0;
     height: var(--bottomBarHeight);
     box-shadow: -5px 0px 45px rgba(0, 0, 0, 0.05);
+    z-index: 5;
     .link {
         flex: 1; height: 100%;
         border: 1px solid var(--gray);
@@ -407,6 +409,7 @@ body {
             font-style: italic;
             margin-bottom: 0.5rem;
             font-size: 2.5rem;
+            text-shadow: 5px 15px 60px var(--shadowEffect);
             @include mobile {
                 font-size: 2rem;
             }
