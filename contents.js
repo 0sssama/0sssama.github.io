@@ -248,7 +248,7 @@ const skills_list = {
         },
         {
             name: 'Nmap',
-            rating: 5,
+            rating: 2,
         },
     ],
 }
