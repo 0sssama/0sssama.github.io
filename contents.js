@@ -203,6 +203,10 @@ const skills_list = {
             rating: 5,
         },
         {
+            name: 'Next.js',
+            rating: 4,
+        },
+        {
             name: 'Vue.js',
             rating: 2,
         }
