@@ -20,7 +20,6 @@ header {
     position: fixed;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     top: 0; left: 0; right: 0;
     height: var(--headerHeight);
@@ -31,6 +30,24 @@ header {
         height: 40%;
         img {
             height: 100%;
+        }
+    }
+    .lang {
+        position: fixed;
+        top: 0.9rem;
+        &.ar {
+            right: 1.5rem;
+        }
+        &.en {
+            left: 1.5rem;
+        }
+        a {
+            color: var(--main);
+            font-weight: 600;
+            text-decoration: none;
+            &:hover {
+                color: var(--mainLight)
+            }
         }
     }
 }
