@@ -1,0 +1,1 @@
+header{--headerHeight: 50px;display:flex;position:fixed;align-items:center;justify-content:center;text-align:center;top:0;left:0;right:0;height:var(--headerHeight);box-shadow:5px 5px 45px rgba(0,0,0,0.1);z-index:100;background-color:var(--lightLowOp)}header .logo{height:40%}header .logo img{height:100%}main{padding-top:calc(var(--headerHeight) + 4rem)}
