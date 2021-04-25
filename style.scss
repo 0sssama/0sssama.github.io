@@ -19,8 +19,6 @@
 }
 flipped-screen {
     display: none;
-}
-flipped-screen {
     text-align: center;
     height: 100vh;
     width: 100%;
@@ -456,7 +454,10 @@ body {
                     margin-left: 0;
                     margin-top: 0.3rem;
                 }
-                ion-icon {
+                img {
+                    width: 20px;
+                }
+                ion-icon, img {
                     font-size: 1.5rem;
                     display: none;
                     &.visible {

@@ -1,4 +1,4 @@
-const host = 'https://labrahmi.me'
+const host = '.'
 const projects = [
     {
         id: 1,
@@ -38,5 +38,14 @@ const projects = [
         description_fr: "Site Internet pour un extrèmement beau Palais Marocain \
                         au coeur de la Medina du Fes : Palais Shazam.",
         langs: ['html', 'sass', 'js']
+    },
+    {
+        id: 5,
+        title: 'ICHRAQ BOUZIDI SHOP',
+        link: 'https://ichraqbouzidi.com',
+        image: `${host}/imgs/ichraq.png`,
+        description_en: 'Shopify theme for visual artist & story teller Ichraq Bouzidi.',
+        description_fr: "Un Theme Shopify pour l'artiste visuel et conteur Ichraq Bouzidi.",
+        langs: ['html', 'sass', 'js', 'shopify']
     }
 ]

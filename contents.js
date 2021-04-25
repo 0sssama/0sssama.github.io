@@ -71,6 +71,7 @@ const projectsContentEN = `
                                 <ion-icon class="js visible" name="logo-javascript"></ion-icon>
                                 <ion-icon class="nodejs" name="logo-nodejs"></ion-icon>
                                 <ion-icon class="react" name="logo-react"></ion-icon>
+                                <img src="/imgs/shopify.png" class="shopify" alt="Shopify" />
                             </div>
                         </div>
                         <button class="visit-btn ol-button__secondary" onClick="window.open('${projects[0].link}')">
@@ -80,7 +81,7 @@ const projectsContentEN = `
                     </div>
                 </div>
                 <div class="project__buttons">
-                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(3, 'en')">
+                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(4, 'en')">
                         <ion-icon name="chevron-back"></ion-icon>
                         <p>${en.projects_previous}</p>
                     </button>
@@ -117,6 +118,7 @@ const projectsContentFR = `
                                 <ion-icon class="js visible" name="logo-javascript"></ion-icon>
                                 <ion-icon class="nodejs" name="logo-nodejs"></ion-icon>
                                 <ion-icon class="react" name="logo-react"></ion-icon>
+                                <img src="/imgs/shopify.png" class="shopify" alt="Shopify" />
                             </div>
                         </div>
                         <button class="visit-btn ol-button__secondary" onClick="window.open('${projects[0].link}')">
@@ -126,7 +128,7 @@ const projectsContentFR = `
                     </div>
                 </div>
                 <div class="project__buttons">
-                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(3, 'fr')">
+                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(4, 'fr')">
                         <ion-icon name="chevron-back"></ion-icon>
                         <p>${fr.projects_previous}</p>
                     </button>
@@ -151,7 +153,7 @@ const showProject = (id, lang) => {
         $('.project__actual-image').attr('alt', projects[id].link)
         $('.project__image__link').attr('onClick', `window.open('${projects[id].link}')`)
         $('.visit-btn').attr('onClick', `window.open('${projects[id].link}')`)
-        let availableLangs = ['html', 'js', 'nodejs', 'react', 'sass']
+        let availableLangs = ['html', 'js', 'nodejs', 'react', 'sass', "shopify"]
         availableLangs.map(lang => {
             $(`.${lang}`).removeClass('visible')
         })
@@ -165,7 +167,7 @@ const showProject = (id, lang) => {
             nextProject = id+1
         }
         if (id === 0) {
-            previousProject = 3
+            previousProject = projects.length - 1
         } else {
             previousProject = id-1
         }
