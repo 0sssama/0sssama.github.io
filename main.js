@@ -72,9 +72,6 @@ const changeContent = (to, lang, projectID) => {
 
 
 const switchTheme = () => {
-    // Found some issues with this feature,
-    // Will be added in feature updates of
-    // the website.
     let currentTheme = $('body').hasClass('light')?'light':'dark'
     $('.theme-icon').attr('name', currentTheme==='light'?'sunny':'moon')
     $('body').toggleClass('light')
@@ -88,7 +85,7 @@ const switchLanguage = (to) => {
     if (currentPage === 'projects') {
         let currentProjectID = parseInt($('.project__buttons__next').attr('onClick').substring(12, 13))-1
         if (currentProjectID === -1) {
-            currentProjectID = 4
+            currentProjectID = 5
         }
         console.log(currentProjectID)
         changeContent(currentPage, to, currentProjectID)

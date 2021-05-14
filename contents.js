@@ -81,7 +81,7 @@ const projectsContentEN = `
                     </div>
                 </div>
                 <div class="project__buttons">
-                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(4, 'en')">
+                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(5, 'en')">
                         <ion-icon name="chevron-back"></ion-icon>
                         <p>${en.projects_previous}</p>
                     </button>
@@ -128,7 +128,7 @@ const projectsContentFR = `
                     </div>
                 </div>
                 <div class="project__buttons">
-                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(4, 'fr')">
+                    <button class="project__buttons__previous ol-button__regular" onClick="showProject(5, 'fr')">
                         <ion-icon name="chevron-back"></ion-icon>
                         <p>${fr.projects_previous}</p>
                     </button>

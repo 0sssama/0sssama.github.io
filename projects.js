@@ -47,5 +47,14 @@ const projects = [
         description_en: 'Shopify theme for visual artist & story teller Ichraq Bouzidi.',
         description_fr: "Un Theme Shopify pour l'artiste visuel et conteur Ichraq Bouzidi.",
         langs: ['html', 'sass', 'js', 'shopify']
+    },
+    {
+        id: 6,
+        title: 'AC-Stock',
+        link: 'https://ac-stock.com',
+        image: `${host}/imgs/ac-stock.png`,
+        description_en: 'Stock management platform.',
+        description_fr: "Plateforme pour gérer le stock de votre propre entreprise.",
+        langs: ['html', 'sass', 'js']
     }
 ]
