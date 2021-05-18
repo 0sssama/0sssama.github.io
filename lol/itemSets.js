@@ -1,7 +1,7 @@
 let displayItems = items.map(
     (item) =>
         `<div class="item ${item.sold_out ? 'sold-out' : ''}">
-            <a href="item-page/${item.id}">
+            <a href="/lol/item-page/${item.id}">
                 <p class="sold-out-text ${item.sold_out ? 'visible' : ''}">Sold out</p>
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item__description">

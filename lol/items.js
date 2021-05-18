@@ -2,14 +2,14 @@ const items = [
     {
         name: 'T-shirt for cuties',
         price: '59.99',
-        image: 'test2.png',
+        image: '/lol/test2.png',
         id: 'index.html',
         sold_out: false,
     },
     {
         name: 'my tshirt',
         price: '00.00',
-        image: 'test2.png',
+        image: '/lol/test2.png',
         id: 'index.html',
         sold_out: true,
 
@@ -17,14 +17,14 @@ const items = [
     {
         name: 'mza7 shirt',
         price: '13.37',
-        image: 'test.png',
+        image: '/lol/test.png',
         id: 'index.html',
         sold_out: false,
     },
     {
         name: 'hot shirt',
         price: '69.69',
-        image: 'test.png',
+        image: '/lol/test.png',
         id: 'index.html',
         sold_out: true,
 
@@ -32,14 +32,14 @@ const items = [
     {
         name: 'ro bgos',
         price: '13.37',
-        image: 'test2.png',
+        image: '/lol/test2.png',
         id: 'index.html',
         sold_out: false,
     },
     {
         name: 'slh ngt',
         price: '00.00',
-        image: 'test2.png',
+        image: '/lol/test2.png',
         id: 'index.html',
         sold_out: true,
 
@@ -47,14 +47,14 @@ const items = [
     {
         name: 'anime talk',
         price: '420.69',
-        image: 'test.png',
+        image: '/lol/test.png',
         id: 'index.html',
         sold_out: false,
     },
     {
         name: 'ngt',
         price: '00.00',
-        image: 'test2.png',
+        image: '/lol/test2.png',
         id: 'index.html',
         sold_out: true,
     },
