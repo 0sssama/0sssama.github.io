@@ -14,7 +14,8 @@
     <meta property="og:url" content="www.labrahmi.me" />
     <meta property="og:type" content="article" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script rel="preload" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="./style.css">
     <script src="./jquery.js"></script>
     <script src="./lang.js"></script>
@@ -38,7 +39,7 @@
     <div class="content"></div>
     <div class="bottom-bar">
         <div class="whoami link">
-            <a href="#" onClick="changeContent('whoami', 'crnt')">
+            <a onClick="changeContent('whoami', 'crnt')">
                 <div class="link-wrapper">
                     <ion-icon name="help-circle"></ion-icon>
                     <p class="bb-l1">WHO AM I?</p>
@@ -46,7 +47,7 @@
             </a>
         </div>
         <div class="projectsLink link">
-            <a href="#" onClick="changeContent('projects', 'crnt')">
+            <a onClick="changeContent('projects', 'crnt')">
                 <div class="link-wrapper">
                     <ion-icon name="code"></ion-icon>
                     <p class="bb-l2">PROJECTS</p>
@@ -54,7 +55,7 @@
             </a>
         </div>
         <div class="skills link">
-            <a href="#" onClick="changeContent('skills', 'crnt')">
+            <a onClick="changeContent('skills', 'crnt')">
                 <div class="link-wrapper">
                     <ion-icon name="construct"></ion-icon>
                     <p class="bb-l3">MY SKILLS</p>
@@ -62,7 +63,7 @@
             </a>
         </div>
         <div class="contact link">
-            <a href="#" onClick="changeContent('contact', 'crnt')">
+            <a onClick="changeContent('contact', 'crnt')">
                 <div class="link-wrapper">
                     <ion-icon name="send"></ion-icon>
                     <p class="bb-l4">CONTACT ME</p>

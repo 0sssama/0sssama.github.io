@@ -34,7 +34,7 @@ const changeContent = (to, lang, projectID) => {
         currentLang = lang
     }
     currentPage = to
-    $('.content').fadeOut()
+    $('.content').addClass('hidden')
     let whoamiContent = currentLang==='en'?whoamiContentEN:whoamiContentFR
     let projectsContent = currentLang==='en'?projectsContentEN:projectsContentFR
     let skillsContent = currentLang==='en'?skillsContentEN:skillsContentFR
@@ -63,11 +63,11 @@ const changeContent = (to, lang, projectID) => {
         if (to === 'skills') {
             changeSkills(currentSkill)
         }
-    }, 400)
-    if (to === 'projects') {
-        showProject(projectID?projectID:0, getCookie('lang'))
-    }
-    $('.content').fadeIn()
+        if (to === 'projects') {
+            showProject(projectID?projectID:0, getCookie('lang'))
+        }
+        $('.content').removeClass('hidden')
+    }, 410)
 }
 
 
@@ -109,9 +109,9 @@ const changeSkills = (to) => {
             $(`li.${skill.name}-link`).removeClass('active')
         }
     })
-    $('.skills__wrapper').fadeOut()
+    $('.skills__wrapper').addClass('hidden')
     setTimeout(()=>{
         $('.skills__wrapper').html(newSkills)
-    }, 400)
-    $('.skills__wrapper').fadeIn()
+        $('.skills__wrapper').removeClass('hidden')
+    }, 410)
 }

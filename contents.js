@@ -143,7 +143,7 @@ const hideLoading = () => {
     $('.loading').removeClass('show')
 }
 const showProject = (id, lang) => {
-    $('.project').fadeOut()
+    $('.project').addClass('hidden')
     setTimeout(()=>{
         $('.project__title').text(projects[id].title)
         let description = lang==='fr'?projects[id].description_fr:projects[id].description_en
@@ -173,8 +173,8 @@ const showProject = (id, lang) => {
         }
         $('.project__buttons__next').attr('onClick', `showProject(${nextProject}, '${getCookie('lang')}')`)
         $('.project__buttons__previous').attr('onClick', `showProject(${previousProject}, '${getCookie('lang')}')`)
-    }, 400)
-    $('.project').fadeIn()
+        $('.project').removeClass('hidden')
+    }, 410)
 }
 const skills_list = {
     langs: [
