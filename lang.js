@@ -8,9 +8,9 @@ const en = {
     "projects_visit": "Visit Now",
     "projects_used": "Used tools : ",
     "bb_l1": "Who am I?",
-    "bb_l2": "My projects",
+    "bb_l2": "Projects",
     "bb_l3": "Skills",
-    "bb_l4": "Contact me"
+    "bb_l4": "Contact"
 }
 const fr = {
     "whoami_text1": "Bonjour, je m'appelle Oussama.",
@@ -24,5 +24,5 @@ const fr = {
     "bb_l1": "Qui suis je?",
     "bb_l2": "Projets",
     "bb_l3": "Compétences",
-    "bb_l4": "Contactez moi"
+    "bb_l4": "Contact"
 }
