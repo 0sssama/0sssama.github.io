@@ -31,8 +31,8 @@ const projects = [
     {
         id: 4,
         title: 'PALAIS SHAZAM',
-        link: 'https://palaisshazam.com',
-        image: `${host}/imgs/shazam.png`,
+        link: 'https://palaisshazam-mlq9x.ondigitalocean.app/',
+        image: `${host}/imgs/shazam.jpg`,
         description_en: 'Website for a beautiful Moroccan Palace in the heart \
                     of the Medina of Fes : Palais Shazam.',
         description_fr: "Site Internet pour un extrèmement beau Palais Marocain \
