@@ -1,6 +1,6 @@
 const en = {
     "whoami_text1": "Hello, this is Oussama.",
-    "whoami_text2": "I am a <b>Networking & Telecommunications</b> student @ <b>EST Fes</b>, freelancer, <b>full stack</b> web developer with <b>+4 years</b> of experience, design & electronics enthusiast. Always curious to learn more about this field.",
+    "whoami_text2": "I am a <b>1337 Khouribga</b> Student (42 Network), freelancer, <b>full stack</b> web developer with <b>+4 years</b> of experience, design & electronics enthusiast. Always curious to learn more about this field.",
     "whoami_text3": "Want us to work together?",
     "contact_text1": "Contact me",
     "projects_next": "Next",
@@ -14,7 +14,7 @@ const en = {
 }
 const fr = {
     "whoami_text1": "Bonjour, je m'appelle Oussama.",
-    "whoami_text2": "Je suis un etudiant en <b>réseaux & télécommunications</b> à <b>EST Fes</b>, freelancer, développeur web <b>full stack</b> avec <b>+4 ans</b> d'éxperience, passionné du design et d'électronique. Toujours curieux d'en savoir plus sur ce domaine.",
+    "whoami_text2": "Je suis un etudiant à <b>1337 Khouribga</b> (42 Network), freelancer, développeur web <b>full stack</b> avec <b>+4 ans</b> d'éxperience, passionné du design et d'électronique. Toujours curieux d'en savoir plus sur ce domaine.",
     "whoami_text3": "Vous voulez qu'on travaille ensemble?",
     "contact_text1": "Contactez moi",
     "projects_next": "Suivant",
