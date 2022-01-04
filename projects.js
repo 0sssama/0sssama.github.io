@@ -11,6 +11,15 @@ const projects = [
     },
     {
         id: 2,
+        title: 'DAMMI APP',
+        link: 'https://dammiapp.com',
+        image: `${host}/imgs/dammiapp.jpeg`,
+        description_en: 'Website for Dammi App. Made in React.js, prototyped in Figma.',
+        description_fr: "Site Internet pour Dammi App. Realisé en React.js, prototype Figma.",
+        langs: ['html', 'sass', 'js']
+    },
+    {
+        id: 3,
         title: 'PALAIS SHAZAM',
         link: 'https://palaisshazam-mlq9x.ondigitalocean.app/',
         image: `${host}/imgs/shazam.jpg`,
@@ -21,7 +30,7 @@ const projects = [
         langs: ['html', 'sass', 'js']
     },
     {
-        id: 3,
+        id: 4,
         title: 'ICHRAQ BOUZIDI SHOP',
         link: 'https://ichraqbouzidi.com',
         image: `${host}/imgs/ichraq.png`,
@@ -30,16 +39,16 @@ const projects = [
         langs: ['html', 'sass', 'js', 'shopify']
     },
     {
-        id: 4,
+        id: 5,
         title: 'Vision Unik',
         link: 'https://visionunikfes.com',
-        image: `${host}/imgs/visionunik.png`,
+        image: `${host}/imgs/visionunik.jpeg`,
         description_en: 'Website for Vision Unik Fes. Made in React.js.',
         description_fr: "Site Internet pour Vision Unik Fes. Realisé en React.js.",
         langs: ['html', 'sass', 'js']
     },
     {
-        id: 5,
+        id: 6,
         title: 'BACK-TRACKING SUDOKU SOLVING ALGORITHM',
         link: 'https://labrahmi.me/sudoku-solver',
         image: `${host}/imgs/sudoku.png`,
