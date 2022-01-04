@@ -5,42 +5,23 @@ const projects = [
         title: 'MATCHING PROFILE PICTURES',
         link: 'https://matchingpfps.com',
         image: `${host}/imgs/matchingpfps.png`,
-        description_en: 'Matching profile pictures finder. 500 average daily visitors.',
-        description_fr: 'Outil de recherche de photos de profils \'matching.\' Moyenne 500 visiteurs chaque jour.',
+        description_en: 'Matching profile pictures finder. 1000 average daily visitors.',
+        description_fr: 'Outil de recherche de photos de profils \'matching.\' Moyenne 1000 visiteurs chaque jour.',
         langs: ['html', 'sass', 'js']
     },
     {
         id: 2,
-        title: 'OSA DREAM SHOP',
-        link: 'https://osadreamshop.com',
-        image: `${host}/imgs/osadreamshop.png`,
-        description_en: 'An e-commerce web-app shop made in MERN stack.',
-        description_fr: 'Une boutique e-commerce développée en MERN stack.',
-        langs: ['html', 'sass', 'react', 'nodejs']
-    },
-    {
-        id: 3,
-        title: 'BACK-TRACKING SUDOKU SOLVING ALGORITHM',
-        link: 'https://labrahmi.me/sudoku-solver',
-        image: `${host}/imgs/sudoku.png`,
-        description_en: 'A Javascript back-tracking algorithm to solve any sudoku board in the world.',
-        description_fr: "Un algorithme Javascript du type back-tracking qui peut résourdre n'importe quel tableau \
-                        de sudoku au monde.",
-        langs: ['html', 'css' ,'js']
-    },
-    {
-        id: 4,
         title: 'PALAIS SHAZAM',
         link: 'https://palaisshazam-mlq9x.ondigitalocean.app/',
         image: `${host}/imgs/shazam.jpg`,
         description_en: 'Website for a beautiful Moroccan Palace in the heart \
-                    of the Medina of Fes : Palais Shazam.',
+                    of the Medina of Fes : Palais Shazam. Made in React.js, Node.js, Express.js & MongoDB.',
         description_fr: "Site Internet pour un extrèmement beau Palais Marocain \
-                        au coeur de la Medina du Fes : Palais Shazam.",
+                        au coeur de la Medina du Fes : Palais Shazam. Realisé en React.js, Node.js, Express.js et MongoDB.",
         langs: ['html', 'sass', 'js']
     },
     {
-        id: 5,
+        id: 3,
         title: 'ICHRAQ BOUZIDI SHOP',
         link: 'https://ichraqbouzidi.com',
         image: `${host}/imgs/ichraq.png`,
@@ -49,12 +30,22 @@ const projects = [
         langs: ['html', 'sass', 'js', 'shopify']
     },
     {
-        id: 6,
-        title: 'AC-Stock',
-        link: 'https://ac-stock.com',
-        image: `${host}/imgs/ac-stock.png`,
-        description_en: 'Stock management platform.',
-        description_fr: "Plateforme pour gérer le stock de votre propre entreprise.",
+        id: 4,
+        title: 'Vision Unik',
+        link: 'https://visionunikfes.com',
+        image: `${host}/imgs/visionunik.png`,
+        description_en: 'Website for Vision Unik Fes. Made in React.js.',
+        description_fr: "Site Internet pour Vision Unik Fes. Realisé en React.js.",
         langs: ['html', 'sass', 'js']
+    },
+    {
+        id: 5,
+        title: 'BACK-TRACKING SUDOKU SOLVING ALGORITHM',
+        link: 'https://labrahmi.me/sudoku-solver',
+        image: `${host}/imgs/sudoku.png`,
+        description_en: 'A Javascript back-tracking algorithm to solve any sudoku board in the world.',
+        description_fr: "Un algorithme Javascript du type back-tracking qui peut résourdre n'importe quel tableau \
+                        de sudoku au monde.",
+        langs: ['html', 'css' ,'js']
     }
 ]
