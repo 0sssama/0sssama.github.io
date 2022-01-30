@@ -1,14 +1,14 @@
-const inLink = "https://www.linkedin.com/in/olabrahmi"
-const twitterLink = "https://twitter.com/0samaTweets"
-const githubLink = "https://github.com/0sssama"
-const email = "LabrahmiOussama@gmail.com"
-const discord = "osm#1567"
-var currentSkill = 'langs'
+const inLink = "https://www.linkedin.com/in/olabrahmi";
+const twitterLink = "https://twitter.com/0samaTweets";
+const githubLink = "https://github.com/0sssama";
+const email = "LabrahmiOussama@gmail.com";
+const discord = "osm#1567";
+var currentSkill = "langs";
 const getCookie = (name) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+};
 const whoamiContentEN = `
     <div class="whoami">
         <div class="title">
@@ -18,15 +18,15 @@ const whoamiContentEN = `
             <p>${en.whoami_text2}</p>
         </div>
         <div class="button en">
-            <p class="en">
-                ${en.whoami_text3}
-            </p>
-            <button class="ol-button__regular" onClick="changeContent('contact', 'en')">
+            <button class="ol-button__regular" onClick="changeContent('projects', 'en')">
+                ${en.projects_text}
+            </button>
+            <button class="ol-button__not-primary" onClick="changeContent('contact', 'en')">
                 ${en.contact_text1}
             </button>
         </div>
     </div>
-    `
+    `;
 const whoamiContentFR = `
     <div class="whoami">
         <div class="title">
@@ -36,15 +36,15 @@ const whoamiContentFR = `
             <p>${fr.whoami_text2}</p>
         </div>
         <div class="button">
-            <p class="fr">
-                ${fr.whoami_text3}
-            </p>
-            <button class="ol-button__regular" onClick="changeContent('contact', 'fr')">
+            <button class="ol-button__regular" onClick="changeContent('projects', 'fr')">
+                ${fr.projects_text}
+            </button>
+            <button class="ol-button__not-primary" onClick="changeContent('contact', 'fr')">
                 ${fr.contact_text1}
             </button>
         </div>
     </div>
-    `
+    `;
 const projectsContentEN = `
             <div class="projects">
                 <div class="project">
@@ -91,7 +91,7 @@ const projectsContentEN = `
                     </button>
                 </div>
             </div>
-`
+`;
 const projectsContentFR = `
             <div class="projects">
                 <div class="project">
@@ -138,220 +138,226 @@ const projectsContentFR = `
                     </button>
                 </div>
             </div>
-`
+`;
 const hideLoading = () => {
-    $('.loading').removeClass('show')
-}
+  $(".loading").removeClass("show");
+};
 const showProject = (id, lang) => {
-    $('.project').addClass('hidden')
-    setTimeout(()=>{
-        $('.project__title').text(projects[id].title)
-        let description = lang==='fr'?projects[id].description_fr:projects[id].description_en
-        $('.project__description').text(description)
-        $('.loading').addClass('show')
-        $('.project__actual-image').attr('src', projects[id].image)
-        $('.project__actual-image').attr('alt', projects[id].link)
-        $('.project__image__link').attr('onClick', `window.open('${projects[id].link}')`)
-        $('.visit-btn').attr('onClick', `window.open('${projects[id].link}')`)
-        let availableLangs = ['html', 'js', 'nodejs', 'react', 'sass', "shopify"]
-        availableLangs.map(lang => {
-            $(`.${lang}`).removeClass('visible')
-        })
-        projects[id].langs.map(lang => {
-            $(`.${lang}`).addClass('visible')
-        }) 
-        let nextProject, previousProject
-        if (id === projects.length - 1) {
-            nextProject = 0
-        } else {
-            nextProject = id+1
-        }
-        if (id === 0) {
-            previousProject = projects.length - 1
-        } else {
-            previousProject = id-1
-        }
-        $('.project__buttons__next').attr('onClick', `showProject(${nextProject}, '${getCookie('lang')}')`)
-        $('.project__buttons__previous').attr('onClick', `showProject(${previousProject}, '${getCookie('lang')}')`)
-        $('.project').removeClass('hidden')
-    }, 410)
-}
-const skills_list = {
-    langs: [
-        {
-            name: 'Javascript',
-            rating: 5,
-        },
-        {
-            name: 'Python',
-            rating: 4,
-        },
-        {
-            name: 'PHP',
-            rating: 3,
-        },
-        {
-            name: 'C',
-            rating: 2,
-        }
-    ],
-    frontend: [
-        {
-            name: 'React.js',
-            rating: 5,
-        },
-        {
-            name: 'Sass',
-            rating: 5,
-        },
-        {
-            name: 'Next.js',
-            rating: 4,
-        },
-        {
-            name: 'Vue.js',
-            rating: 2,
-        }
-    ],
-    backend: [
-        {
-            name: 'Express.js',
-            rating: 5,
-        },
-        {
-            name: 'MongoDB',
-            rating: 5,
-        },
-        {
-            name: 'Flask',
-            rating: 3,
-        },
-        {
-            name: 'SQL Alchemy',
-            rating: 2,
-        }
-    ],
-    tools: [
-        {
-            name: 'GIT/Github',
-            rating: 5,
-        },
-        {
-            name: 'Docker',
-            rating: 5,
-        },
-        {
-            name: 'PS/AI',
-            rating: 5,
-        },
-        {
-            name: 'Figma',
-            rating: 4,
-        },
-        {
-            name: 'AE/PR',
-            rating: 4,
-        },
-        {
-            name: 'Nmap',
-            rating: 2,
-        },
-    ],
-}
-const skills_langs = `
-    ${skills_list.langs.map(skill => {
-        return (`
-            <div class="skill">
-                <p class="skill__name">${skill.name}</p>
-                <div class="skill__rating">
-                    <span class=${skill.rating>0?'':'empty'}></span>   
-                    <span class=${skill.rating>1?'':'empty'}></span>   
-                    <span class=${skill.rating>2?'':'empty'}></span>   
-                    <span class=${skill.rating>3?'':'empty'}></span>   
-                    <span class=${skill.rating>4?'':'empty'}></span>   
-                </div>
-            </div>
-        `
-        )
-    }).join("\n")}
-`
-const skills_frontend = `
-    ${skills_list.frontend.map(skill => {
-        return (`
-            <div class="skill">
-                <p class="skill__name">${skill.name}</p>
-                <div class="skill__rating">
-                    <span class=${skill.rating>0?'':'empty'}></span>   
-                    <span class=${skill.rating>1?'':'empty'}></span>   
-                    <span class=${skill.rating>2?'':'empty'}></span>   
-                    <span class=${skill.rating>3?'':'empty'}></span>   
-                    <span class=${skill.rating>4?'':'empty'}></span>   
-                </div>
-            </div>
-        `
-        )
-    }).join("\n")}
-`
-const skills_backend = `
-    ${skills_list.backend.map(skill => {
-        return (`
-            <div class="skill">
-                <p class="skill__name">${skill.name}</p>
-                <div class="skill__rating">
-                    <span class=${skill.rating>0?'':'empty'}></span>   
-                    <span class=${skill.rating>1?'':'empty'}></span>   
-                    <span class=${skill.rating>2?'':'empty'}></span>   
-                    <span class=${skill.rating>3?'':'empty'}></span>   
-                    <span class=${skill.rating>4?'':'empty'}></span>   
-                </div>
-            </div>
-        `
-        )
-    }).join("\n")}
-`
-const skills_tools = `
-    ${skills_list.tools.map(skill => {
-        return (`
-            <div class="skill">
-                <p class="skill__name">${skill.name}</p>
-                <div class="skill__rating">
-                    <span class=${skill.rating>0?'':'empty'}></span>   
-                    <span class=${skill.rating>1?'':'empty'}></span>   
-                    <span class=${skill.rating>2?'':'empty'}></span>   
-                    <span class=${skill.rating>3?'':'empty'}></span>   
-                    <span class=${skill.rating>4?'':'empty'}></span>   
-                </div>
-            </div>
-        `
-        )
-    }).join("\n")}
-`
-const skillsLol = [
-    {
-        name: 'langs',
-        content: skills_langs
-    },
-    {
-        name: 'frontend',
-        content: skills_frontend
-    },
-    {
-        name: 'backend',
-        content: skills_backend
-    },
-    {
-        name: 'tools',
-        content: skills_tools
+  $(".project").addClass("hidden");
+  setTimeout(() => {
+    $(".project__title").text(projects[id].title);
+    let description =
+      lang === "fr" ? projects[id].description_fr : projects[id].description_en;
+    $(".project__description").text(description);
+    $(".loading").addClass("show");
+    $(".project__actual-image").attr("src", projects[id].image);
+    $(".project__actual-image").attr("alt", projects[id].link);
+    $(".project__image__link").attr(
+      "onClick",
+      `window.open('${projects[id].link}')`
+    );
+    $(".visit-btn").attr("onClick", `window.open('${projects[id].link}')`);
+    let availableLangs = ["html", "js", "nodejs", "react", "sass", "shopify"];
+    availableLangs.map((lang) => {
+      $(`.${lang}`).removeClass("visible");
+    });
+    projects[id].langs.map((lang) => {
+      $(`.${lang}`).addClass("visible");
+    });
+    let nextProject, previousProject;
+    if (id === projects.length - 1) {
+      nextProject = 0;
+    } else {
+      nextProject = id + 1;
     }
-]
+    if (id === 0) {
+      previousProject = projects.length - 1;
+    } else {
+      previousProject = id - 1;
+    }
+    $(".project__buttons__next").attr(
+      "onClick",
+      `showProject(${nextProject}, '${getCookie("lang")}')`
+    );
+    $(".project__buttons__previous").attr(
+      "onClick",
+      `showProject(${previousProject}, '${getCookie("lang")}')`
+    );
+    $(".project").removeClass("hidden");
+  }, 410);
+};
+const skills_list = {
+  langs: [
+    {
+      name: "Javascript",
+      rating: 5,
+    },
+    {
+      name: "Python",
+      rating: 4,
+    },
+    {
+      name: "PHP",
+      rating: 3,
+    },
+    {
+      name: "C",
+      rating: 2,
+    },
+  ],
+  frontend: [
+    {
+      name: "React.js/Next.js",
+      rating: 5,
+    },
+    {
+      name: "Sass",
+      rating: 5,
+    },
+    {
+      name: "TailwindCSS",
+      rating: 4,
+    },
+    {
+      name: "Recoil.js",
+      rating: 4,
+    },
+  ],
+  backend: [
+    {
+      name: "Express.js",
+      rating: 5,
+    },
+    {
+      name: "MongoDB",
+      rating: 5,
+    },
+    {
+      name: "Flask",
+      rating: 3,
+    },
+    {
+      name: "PostgreSQL",
+      rating: 2,
+    },
+  ],
+  tools: [
+    {
+      name: "Git/GitHub",
+      rating: 5,
+    },
+    {
+      name: "PS/AI",
+      rating: 5,
+    },
+    {
+      name: "Figma",
+      rating: 4,
+    },
+    {
+      name: "Docker",
+      rating: 3,
+    },
+  ],
+};
+const skills_langs = `
+    ${skills_list.langs
+      .map((skill) => {
+        return `
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating > 0 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 1 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 2 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 3 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 4 ? "" : "empty"}></span>   
+                </div>
+            </div>
+        `;
+      })
+      .join("\n")}
+`;
+const skills_frontend = `
+    ${skills_list.frontend
+      .map((skill) => {
+        return `
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating > 0 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 1 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 2 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 3 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 4 ? "" : "empty"}></span>   
+                </div>
+            </div>
+        `;
+      })
+      .join("\n")}
+`;
+const skills_backend = `
+    ${skills_list.backend
+      .map((skill) => {
+        return `
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating > 0 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 1 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 2 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 3 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 4 ? "" : "empty"}></span>   
+                </div>
+            </div>
+        `;
+      })
+      .join("\n")}
+`;
+const skills_tools = `
+    ${skills_list.tools
+      .map((skill) => {
+        return `
+            <div class="skill">
+                <p class="skill__name">${skill.name}</p>
+                <div class="skill__rating">
+                    <span class=${skill.rating > 0 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 1 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 2 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 3 ? "" : "empty"}></span>   
+                    <span class=${skill.rating > 4 ? "" : "empty"}></span>   
+                </div>
+            </div>
+        `;
+      })
+      .join("\n")}
+`;
+const skillsLol = [
+  {
+    name: "langs",
+    content: skills_langs,
+  },
+  {
+    name: "frontend",
+    content: skills_frontend,
+  },
+  {
+    name: "backend",
+    content: skills_backend,
+  },
+  {
+    name: "tools",
+    content: skills_tools,
+  },
+];
 const skillContent = (skillName) => {
-    skillsLol.map(skill => {
-        if (skill.name === skillName) {
-            return (skill.content)
-        }
-    })
-    return ''
-}
+  skillsLol.map((skill) => {
+    if (skill.name === skillName) {
+      return skill.content;
+    }
+  });
+  return "";
+};
 const skillsContentEN = `
         <div class="skills">
             <p class="title">My Skills</p>
@@ -375,7 +381,7 @@ const skillsContentEN = `
                 <div class="skills__wrapper">${skillContent(currentSkill)}</div>
             </div>
         </div>
-`
+`;
 const skillsContentFR = `
     <div class="skills">
         <p class="title">Compétences</p>
@@ -399,7 +405,7 @@ const skillsContentFR = `
             <div class="skills__wrapper">${skillContent(currentSkill)}</div>
         </div>
     </div>
-`
+`;
 const contactContentEN = `
     <div class="contact">
         <div class="title">
@@ -446,7 +452,7 @@ const contactContentEN = `
             </div>
         </div>
     </div>
-    `
+    `;
 const contactContentFR = `
     <div class="contact">
         <div class="title">
@@ -493,4 +499,4 @@ const contactContentFR = `
             </div>
         </div>
     </div>
-    `
+    `;
