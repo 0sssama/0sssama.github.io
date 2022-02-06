@@ -25,7 +25,7 @@ const projects = [
   {
     id: 3,
     title: "PALAIS SHAZAM",
-    link: "https://palaisshazam-mlq9x.ondigitalocean.app/",
+    link: "https://palaisshazam.com/",
     image: `${host}/imgs/shazam.jpg`,
     description_en:
       "Website for a beautiful Moroccan Palace in the heart \
