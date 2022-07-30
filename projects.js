@@ -2,6 +2,17 @@ const host = ".";
 const projects = [
   {
     id: 1,
+    title: "1337 Companies",
+    link: "https://companies.1337.ma",
+    image: `${host}/imgs/companies.png`,
+    description_en:
+      "1337 Companies is a platform that connects 1337 partner companies with students",
+    description_fr:
+      "1337 Comapnies est une plateforme qui connecte les 1337 entreprises partenaires avec les étudiants",
+    langs: ["html", "sass", "js"],
+  },
+  {
+    id: 2,
     title: "MATCHING PROFILE PICTURES",
     link: "https://matchingpfps.com",
     image: `${host}/imgs/matchingpfps.png`,
@@ -12,7 +23,7 @@ const projects = [
     langs: ["html", "sass", "js"],
   },
   {
-    id: 2,
+    id: 3,
     title: "DAMMI APP",
     link: "https://dammiapp.com",
     image: `${host}/imgs/dammiapp.jpeg`,
@@ -23,7 +34,7 @@ const projects = [
     langs: ["html", "sass", "js"],
   },
   {
-    id: 3,
+    id: 4,
     title: "PALAIS SHAZAM",
     link: "https://palaisshazam.com/",
     image: `${host}/imgs/shazam.jpg`,
@@ -36,7 +47,7 @@ const projects = [
     langs: ["html", "sass", "js"],
   },
   {
-    id: 4,
+    id: 5,
     title: "ICHRAQ BOUZIDI SHOP",
     link: "https://ichraqbouzidi.com",
     image: `${host}/imgs/ichraq.png`,
@@ -47,7 +58,7 @@ const projects = [
     langs: ["html", "sass", "js", "shopify"],
   },
   {
-    id: 5,
+    id: 6,
     title: "Vision Unik",
     link: "https://visionunikfes.com",
     image: `${host}/imgs/visionunik.jpeg`,
@@ -56,7 +67,7 @@ const projects = [
     langs: ["html", "sass", "js"],
   },
   {
-    id: 6,
+    id: 7,
     title: "MediaEthic",
     link: "https://media-ethic.vercel.app",
     image: `${host}/imgs/mediaethic.jpeg`,
